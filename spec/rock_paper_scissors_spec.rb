@@ -1,11 +1,14 @@
 require 'rock_paper_scissors'
 require 'debugger'
 
-describe RockPaperScissors, :pending => true do
+describe RockPaperScissors do
   before(:each) do
     @rock = ['Armando','R'] ; @paper = ['Dave','P'] ; @scissors = ['Sam','S']
   end
   describe 'game' do
+    it 'rock breaks scissors' do
+      RockPaperScissors.winner(@scissors, @rock).should == @rock
+    end
     it 'rock breaks scissors [10 points]' do
       RockPaperScissors.winner(@rock, @scissors).should == @rock
     end
