@@ -19,7 +19,8 @@ class RockPaperScissors
   def self.tournament_winner(tournament)
     return self.winner(tournament[0], tournament[1]) \
       if tournament.flatten.count == 4
-    winners = tournament.collect{|x| self.tournament_winner(x[0], x[1])}
+      self.winner(self.tournament_winner(tournament[0]), 
+          self.tournament_winner(tournament[1]))
   end
 
 end
